@@ -52,7 +52,7 @@ function checkGuess() {
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
 
-  if (attempts === maxNumberOfAttempts) {
+  if (attempts == maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
@@ -76,13 +76,15 @@ function setup() {
 
   // Reset number of attempts
   //maxNumberOfAttempts = 5;
+  attempts = 0;
+  remainingAttempts = 5;
 
   // Enable the input and submit button
   submitButton.disabled = false;
   guessInput.disabled = false;
 
   hideAllMessages();
-  const resetButton = document.getElementById("reset");
+  //const resetButton = document.getElementById("reset");
   resetButton.style.display = "none";
 }
 
